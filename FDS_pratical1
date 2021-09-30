@@ -1,0 +1,72 @@
+marklist=[]
+numberofstudent=int(input('Enter Number Of Student'))
+for i in range (numberofstudent):
+  marks=int(input(f"Enter marks of student "+str(i+1)+" : "))
+  marklist.append(marks)
+
+
+
+def average(marklist):
+   sum=0
+   count=0
+   for i in range(len(marklist)):
+     sum+=marklist[i]
+     count+=1
+     avg=sum/count
+   print("sum =",sum)
+   print("avg  ",avg)
+
+average(marklist)
+    
+     
+    
+#<------------------------------------------------------------------------------------->
+
+#function for  highest score in the test 
+def max():
+  max=marklist[0]
+  for i in range(len(marklist)):
+     if marklist[i]>max:
+      max=marklist[i]
+
+  print("maximum marks scored is",max)
+def mim():
+   min = marklist[0]
+   for i in range(len(marklist)):
+ 
+     if marklist[i] < min:
+        min = marklist[i] 
+   print("minimum marks scored is ",min)
+max()
+mim()
+
+#<----------------------------------------------------------------------->
+#function for the max ferquency of stduent score marks
+
+def frequency(marklist):
+   i=0
+   x=0
+   print("Marks  Frequency")
+   for j in marklist:
+     if (marklist.index(j)==i):
+       print(j, " | ", marklist.count(j))
+       if marklist.count(j)>x:
+         x=marklist.count(j)
+         mark=j
+       i=i+1
+   
+frequency(marklist)
+
+#<-------------------------------------------------------------------->
+#function of absent student for exam
+
+def absent(marklist):
+  count=0
+  for i in range(len(marklist)):
+    if marklist[i]==-999:
+      count+=1
+  print("number of student absent=",count)
+  return(count)
+  
+  
+absent(marklist)
